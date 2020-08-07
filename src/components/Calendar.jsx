@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { format, parse } from "date-fns";
+import { format } from "date-fns";
 import addMonths from "date-fns/addMonths";
 import addDays from "date-fns/addDays";
 import subMonths from "date-fns/subMonths";
@@ -68,7 +68,7 @@ class Calendar extends Component {
     while (day <= endDate) {
       for (let i = 0; i < 7; i++) {
         formattedDate = format(day, dateFormat);
-        const cloneDay = day;
+        // const cloneDay = day;
         days.push(
           <div
             className={`col cell ${
@@ -79,7 +79,7 @@ class Calendar extends Component {
                 : ""
             }`}
             key={day}
-            onClick={() => this.onDateClick(parse(cloneDay))}
+            // onClick={() => this.onDateClick(parse(cloneDay))}
           >
             <span className="number">{formattedDate}</span>
             <span className="bg">{formattedDate}</span>
